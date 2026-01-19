@@ -29,7 +29,7 @@ const MaxMenu = ({ current, domains, onExpand, onSignOut }: Props) => {
           sizes="100vw"
           className="animate-fade-in opacity-0 delay-300 fill-mode-forwards"
           style={{
-            width: '50%',
+            width: '80%',
             height: 'auto',
           }}
           width={0}

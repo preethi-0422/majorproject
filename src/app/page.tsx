@@ -21,26 +21,37 @@ export default async function Home() {
     <main>
       <NavBar />
       <section>
-        <div className="flex items-center justify-center flex-col mt-[80px] gap-4 ">
+        <div className="flex items-center justify-center flex-col pt-10 gap-6">
+
           <span className="text-orange bg-orange/20 px-4 py-2 rounded-full text-sm">
             An AI powered sales assistant chatbot
           </span>
+          {/* <div className="w-full max-w-[500px] flex justify-center">
+            <Image
+                 src="/images/corinna-ai-logo.png"
+                  width={500}
+                  height={140}
+                  alt="MarketEase Logo"
+                  className="object-contain"
+            />
+          </div> */}
+
           <Image
             src="/images/corinna-ai-logo.png"
-            width={500}
-            height={100}
+            width={200}
+            height={20}
             alt="Logo"
-            className="max-w-lg object-contain"
+            className="object-contain"
           />
           <p className="text-center max-w-[500px]">
-            Your AI powered sales assistant! Embed Corinna AI into any website
+            Your AI powered sales assistant! Embed MarketEase into any website
             with just a snippet of code!
           </p>
           <Button className="bg-orange font-bold text-white px-4">
             Start For Free
           </Button>
           <Image
-            src="/images/iphonecorinna.png"
+            src="/images/iphonecorinna.jpeg"
             width={400}
             height={100}
             alt="Logo"
