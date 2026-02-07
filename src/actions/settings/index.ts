@@ -50,7 +50,7 @@ export const onIntegrateDomain = async (domain: string, icon: string) => {
           data: {
             domains: {
               create: {
-                name: domain,
+                name: domain.replace(/^https?:\/\//, '').replace(/\/$/, ''),
                 icon,
                 chatBot: {
                   create: {
@@ -215,7 +215,7 @@ export const onUpdateDomain = async (id: string, name: string) => {
           id,
         },
         data: {
-          name,
+          name: name.replace(/^https?:\/\//, '').replace(/\/$/, ''),
         },
       })
 

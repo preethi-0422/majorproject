@@ -36,9 +36,9 @@ const Modal = ({
             <div className="flex justify-center gap-3">
               <div className="w-12 h-12 relative">
                 <Image
-                  src={`https://ucarecdn.com/2c9bd4ab-1f00-41df-bad2-df668f65a232/`}
+                  src= "/images/logo.png"
                   fill
-                  alt="Corinna"
+                  alt="MarketEase"
                 />
               </div>
               <div className="text-gray-400">
@@ -47,7 +47,7 @@ const Modal = ({
               </div>
               <div className="w-12 h-12 relative">
                 <Image
-                  src={`https://ucarecdn.com/${logo}/`}
+                  src='/images/stripe.png'
                   fill
                   alt="Stripe"
                 />

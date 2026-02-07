@@ -44,9 +44,12 @@ export const useStripeCustomer = (amount: number, stripeId: string) => {
       if (intent) {
         setLoadForm(false)
         setStripeSecret(intent.secret!)
+      } else {
+        setLoadForm(false)
       }
     } catch (error) {
       console.log(error)
+      setLoadForm(false)
     }
   }
 

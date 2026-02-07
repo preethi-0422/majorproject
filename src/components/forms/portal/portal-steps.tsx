@@ -84,6 +84,18 @@ const PortalSteps = ({
 
 
   if (step == 2 && type == 'Payment') {
+    if (!products || products.length === 0 || !amount) {
+      return (
+        <div className="flex flex-col items-center gap-3 w-full justify-center">
+          <h2 className="font-bold text-gray-600 text-4xl">
+            No products available
+          </h2>
+          <p className="text-gray-500">
+            There are no products listed for this domain yet.
+          </p>
+        </div>
+      )
+    }
     return (
       <PaymentCheckout
         products={products}

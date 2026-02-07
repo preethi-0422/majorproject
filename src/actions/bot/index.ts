@@ -60,14 +60,13 @@ export const onGetCurrentChatBot = async (id: string) => {
   }
 }
 
-let customerEmail: string | undefined
-
 export const onAiChatBotAssistant = async (
   id: string,
   chat: { role: 'assistant' | 'user'; content: string }[],
   author: 'user',
   message: string
 ) => {
+  let customerEmail: string | undefined
   try {
     const chatBotDomain = await client.domain.findUnique({
       where: {
@@ -232,6 +231,9 @@ export const onAiChatBotAssistant = async (
               if the customer wants to buy a product redirect them to the payment page http://localhost:3000/portal/${id}/payment/${
                 checkCustomer?.customer[0].id
               }
+
+              IMPORTANT: You must use the EXACT links provided above. Do not create relative links like /payment-portal or use the customer's domain.
+              Always use the full http://localhost:3000/... URL as specified.
           `,
         })
 
@@ -313,7 +315,7 @@ export const onAiChatBotAssistant = async (
             const response = {
               role: 'assistant',
               content: `Great! you can follow the link to proceed`,
-              link: link.slice(0, -1),
+              link: link.replace(/[.!?,)]$/, ''),
             }
 
             await onStoreConversations(
